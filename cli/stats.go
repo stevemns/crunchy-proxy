@@ -22,7 +22,7 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
-	pb "github.com/crunchydata/crunchy-proxy/server/serverpb"
+	pb "github.com/stevemns/crunchy-proxy/server/serverpb"
 )
 
 var statsCmd = &cobra.Command{

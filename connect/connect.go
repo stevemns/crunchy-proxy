@@ -17,9 +17,9 @@ package connect
 import (
 	"net"
 
-	"github.com/crunchydata/crunchy-proxy/config"
-	"github.com/crunchydata/crunchy-proxy/protocol"
-	"github.com/crunchydata/crunchy-proxy/util/log"
+	"github.com/stevemns/crunchy-proxy/config"
+	"github.com/stevemns/crunchy-proxy/protocol"
+	"github.com/stevemns/crunchy-proxy/util/log"
 )
 
 func Send(connection net.Conn, message []byte) (int, error) {

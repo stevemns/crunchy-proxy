@@ -23,7 +23,6 @@ import (
 	"github.com/pkg/errors"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/transport"
 )
 
 func IsClosedConnection(err error) bool {
@@ -41,9 +40,11 @@ func IsClosedConnection(err error) bool {
 		return true
 	}
 
-	if streamErr, ok := err.(transport.StreamError); ok && streamErr.Code == codes.Canceled {
-		return true
-	}
+	// TODO(stevemns): figure out what we want to do here in that
+	// transport.StreamError is no longer publicly exported.
+	// if streamErr, ok := err.(transport.StreamError); ok && streamErr.Code == codes.Canceled {
+	// return true
+	// }
 
 	return false
 }
